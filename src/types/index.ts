@@ -1,11 +1,29 @@
 export type Channel = 'LINE' | 'HP' | '電話'
 export type InquiryStatus = '新規' | 'AI対応中' | '対応待ち' | '解決済み'
 export type InquiryCategory =
-  | 'レンタル希望'
-  | '部品請求'
-  | '故障・修理'
-  | '料金・契約'
-  | '設置・配送'
+  | 'Water Pure Pro'
+  | 'Water Pure'
+  | 'Pitcher Pure'
+  | 'Silica Pure'
+  | '小型海水淡水化装置'
+  | '循環式手洗いユニット'
+  | '採用・エントリー'
+  | 'その他'
+
+export type WebInquiryIndustry =
+  | '物流'
+  | '防災・地域インフラ'
+  | '建設'
+  | '船舶'
+  | '企業CSR活動'
+  | 'その他'
+
+export type WebInquirySource =
+  | 'インターネット検索'
+  | '雑誌・テレビ'
+  | '展示会'
+  | 'ニュースレター'
+  | '紹介'
   | 'その他'
 
 export interface Inquiry {
@@ -49,10 +67,17 @@ export interface LineUser {
 export interface WebInquiry {
   id: string
   name: string
+  furigana: string
   email: string
+  phone: string
+  companyName?: string
+  title?: string
   subject: string
   content: string
   category: InquiryCategory
+  industry: WebInquiryIndustry
+  isExistingCustomer?: boolean
+  inquirySource?: WebInquirySource
   status: '未解決' | '解決済み'
   createdAt: string
   aiReply: string

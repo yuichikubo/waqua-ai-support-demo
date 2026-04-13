@@ -145,11 +145,11 @@ export default function DashboardPage() {
         <CardContent>
           <div className="space-y-1">
             {[
-              { id: 'WQ-2024-0013', name: '伊藤みなみ', ch: 'LINE', cat: 'レンタル希望', status: '新規', time: '11:50', chColor: 'bg-green-100 text-green-700' },
-              { id: 'WQ-2024-0011', name: '松本さくら', ch: '電話', cat: '故障・修理', status: '対応待ち', time: '11:15', chColor: 'bg-orange-100 text-orange-700' },
-              { id: 'WQ-2024-0010', name: '木村正人', ch: '電話', cat: '料金・契約', status: '対応中', time: '10:45', chColor: 'bg-orange-100 text-orange-700' },
-              { id: 'WQ-2024-0003', name: '鈴木一郎', ch: 'LINE', cat: '故障・修理', status: '対応待ち', time: '10:05', chColor: 'bg-green-100 text-green-700' },
-              { id: 'WQ-2024-0007', name: '中村大輔', ch: 'HP', cat: '故障・修理', status: '対応待ち', time: '09:50', chColor: 'bg-blue-100 text-blue-700' },
+              { id: 'WQ-2024-0013', name: '伊藤みなみ', ch: 'LINE', cat: 'Water Pure Pro', status: '新規', time: '11:50', chColor: 'bg-green-100 text-green-700' },
+              { id: 'WQ-2024-0011', name: '松本さくら', ch: '電話', cat: 'Pitcher Pure', status: '対応待ち', time: '11:15', chColor: 'bg-orange-100 text-orange-700' },
+              { id: 'WQ-2024-0010', name: '木村正人', ch: '電話', cat: 'Silica Pure', status: '対応中', time: '10:45', chColor: 'bg-orange-100 text-orange-700' },
+              { id: 'WQ-2024-0003', name: '鈴木一郎', ch: 'LINE', cat: 'Pitcher Pure', status: '対応待ち', time: '10:05', chColor: 'bg-green-100 text-green-700' },
+              { id: 'WQ-2024-0007', name: '中村大輔', ch: 'HP', cat: 'Pitcher Pure', status: '対応待ち', time: '09:50', chColor: 'bg-blue-100 text-blue-700' },
             ].map((item) => (
               <div key={item.id} className="flex items-center gap-4 py-2.5 border-b border-gray-50 last:border-0">
                 <span className="text-xs text-gray-400 w-28 shrink-0 font-mono">{item.id}</span>

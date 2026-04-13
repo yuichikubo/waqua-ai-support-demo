@@ -7,11 +7,13 @@ interface CategoryBadgeProps {
 }
 
 const categoryStyles: Record<string, string> = {
-  'レンタル希望': 'bg-blue-100 text-blue-700',
-  '部品請求': 'bg-cyan-100 text-cyan-700',
-  '故障・修理': 'bg-red-100 text-red-700',
-  '料金・契約': 'bg-purple-100 text-purple-700',
-  '設置・配送': 'bg-teal-100 text-teal-700',
+  'Water Pure Pro': 'bg-blue-100 text-blue-700',
+  'Water Pure': 'bg-cyan-100 text-cyan-700',
+  'Pitcher Pure': 'bg-sky-100 text-sky-700',
+  'Silica Pure': 'bg-indigo-100 text-indigo-700',
+  '小型海水淡水化装置': 'bg-teal-100 text-teal-700',
+  '循環式手洗いユニット': 'bg-emerald-100 text-emerald-700',
+  '採用・エントリー': 'bg-purple-100 text-purple-700',
   'その他': 'bg-gray-100 text-gray-600',
 }
 

@@ -14,7 +14,7 @@ import { Search } from 'lucide-react'
 
 const channels: (Channel | 'すべて')[] = ['すべて', 'LINE', 'HP', '電話']
 const statuses: (InquiryStatus | 'すべて')[] = ['すべて', '新規', 'AI対応中', '対応待ち', '解決済み']
-const categories: (InquiryCategory | 'すべて')[] = ['すべて', 'レンタル希望', '部品請求', '故障・修理', '料金・契約', '設置・配送', 'その他']
+const categories: (InquiryCategory | 'すべて')[] = ['すべて', 'Water Pure Pro', 'Water Pure', 'Pitcher Pure', 'Silica Pure', '小型海水淡水化装置', 'その他']
 
 export default function InquiriesPage() {
   const router = useRouter()

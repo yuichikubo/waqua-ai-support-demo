@@ -106,20 +106,53 @@ export default function WebPage() {
 
           {/* Inquiry Card */}
           <Card className="border border-gray-200 shadow-sm">
-            <CardContent className="p-5 space-y-3">
-              <div className="grid grid-cols-2 gap-x-6 gap-y-2">
+            <CardContent className="p-5 space-y-4">
+              <div className="grid grid-cols-2 gap-x-6 gap-y-3">
                 <div>
-                  <span className="text-xs text-gray-400">名前</span>
+                  <span className="text-xs text-gray-400">氏名</span>
                   <p className="text-sm font-medium">{selected.name}</p>
+                  <p className="text-xs text-gray-400">{selected.furigana}</p>
                 </div>
                 <div>
                   <span className="text-xs text-gray-400">メールアドレス</span>
                   <p className="text-sm font-medium">{selected.email}</p>
                 </div>
                 <div>
-                  <span className="text-xs text-gray-400">問い合わせ種別</span>
-                  <p className="text-sm"><CategoryBadge category={selected.category} /></p>
+                  <span className="text-xs text-gray-400">電話番号</span>
+                  <p className="text-sm font-medium">{selected.phone}</p>
                 </div>
+                {selected.companyName && (
+                  <div>
+                    <span className="text-xs text-gray-400">会社名</span>
+                    <p className="text-sm font-medium">{selected.companyName}</p>
+                  </div>
+                )}
+                {selected.title && (
+                  <div>
+                    <span className="text-xs text-gray-400">部署・役職</span>
+                    <p className="text-sm font-medium">{selected.title}</p>
+                  </div>
+                )}
+                <div>
+                  <span className="text-xs text-gray-400">お問い合わせ種別</span>
+                  <p className="text-sm mt-0.5"><CategoryBadge category={selected.category} /></p>
+                </div>
+                <div>
+                  <span className="text-xs text-gray-400">業種・分野</span>
+                  <p className="text-sm font-medium">{selected.industry}</p>
+                </div>
+                {selected.isExistingCustomer !== undefined && (
+                  <div>
+                    <span className="text-xs text-gray-400">既存顧客</span>
+                    <p className="text-sm font-medium">{selected.isExistingCustomer ? 'あり' : 'なし'}</p>
+                  </div>
+                )}
+                {selected.inquirySource && (
+                  <div>
+                    <span className="text-xs text-gray-400">お問い合わせ経路</span>
+                    <p className="text-sm font-medium">{selected.inquirySource}</p>
+                  </div>
+                )}
               </div>
               <div>
                 <span className="text-xs text-gray-400">お問い合わせ内容</span>

@@ -8,7 +8,7 @@ export const lineUsers: LineUser[] = [
     lastMessage: 'ウォーターサーバーのレンタルを検討しています',
     lastMessageAt: '09:15',
     unreadCount: 1,
-    category: 'レンタル希望',
+    category: 'Water Pure Pro',
     messages: [
       { id: 'm1', sender: 'customer', content: 'ウォーターサーバーのレンタルを検討しています。料金を教えてください。', timestamp: '09:15' },
       { id: 'm2', sender: 'ai', content: 'お問い合わせありがとうございます！\n\n月額3,280円（税込）からご利用いただけます。設置費用は無料です。\n\n据え置き型・ビルトイン型・ポータブル型の3種類をご用意しております。ご希望の設置場所やご使用人数をお知らせいただければ、最適なプランをご提案できます。', timestamp: '09:16' },
@@ -24,7 +24,7 @@ export const lineUsers: LineUser[] = [
     lastMessage: 'フィルター交換の時期を教えてください',
     lastMessageAt: '09:32',
     unreadCount: 0,
-    category: '部品請求',
+    category: 'Water Pure',
     messages: [
       { id: 'm1', sender: 'customer', content: 'フィルター交換の時期を教えてください。', timestamp: '09:32' },
       { id: 'm2', sender: 'ai', content: 'フィルターは6ヶ月に1回の交換を推奨しております。\n\n交換用フィルターは1本3,300円（税込）です。\nご注文はマイページまたはお電話（0120-XXX-XXX）で承っております。\n\n現在ご使用の機種をお知らせいただければ、対応フィルターをご案内できます。', timestamp: '09:33' },
@@ -39,7 +39,7 @@ export const lineUsers: LineUser[] = [
     lastMessage: '水漏れが発生しています',
     lastMessageAt: '10:05',
     unreadCount: 2,
-    category: '故障・修理',
+    category: 'Pitcher Pure',
     messages: [
       { id: 'm1', sender: 'customer', content: '水漏れが発生しています。かなり量が多くて困っています。', timestamp: '10:05' },
       { id: 'm2', sender: 'ai', content: 'それは大変でしたね。すぐに対応いたします。\n\n安全のため、まず電源をお切りいただき、本体後部の止水栓を閉めてください。\n\n機種名と製造番号（本体側面のシール）をご確認の上、お知らせください。', timestamp: '10:06' },
@@ -55,7 +55,7 @@ export const lineUsers: LineUser[] = [
     lastMessage: '月額料金の確認をしたいです',
     lastMessageAt: '10:22',
     unreadCount: 0,
-    category: '料金・契約',
+    category: 'Silica Pure',
     messages: [
       { id: 'm1', sender: 'customer', content: '月額料金の確認をしたいです。先月から金額が変わった気がして。', timestamp: '10:22' },
       { id: 'm2', sender: 'ai', content: '料金についてご確認させていただきます。\n\n現在の標準プランは月額3,280円（税込）です。\n\nマイページから請求履歴をご確認いただけます。ご契約番号をお知らせいただければ、詳細をご確認いたします。', timestamp: '10:23' },
@@ -70,7 +70,7 @@ export const lineUsers: LineUser[] = [
     lastMessage: '設置場所の変更は可能ですか？',
     lastMessageAt: '14:30',
     unreadCount: 0,
-    category: '設置・配送',
+    category: '小型海水淡水化装置',
     messages: [
       { id: 'm1', sender: 'customer', content: '設置場所の変更は可能ですか？キッチンからリビングに移したいです。', timestamp: '14:30' },
       { id: 'm2', sender: 'ai', content: '設置場所の変更は無料で承っております。\n\n移動先の条件として、コンセント（100V）から1m以内、直射日光が当たらない場所が必要です。\n\n担当者がご自宅にお伺いして移動作業を行います。ご希望の日程をお知らせください。', timestamp: '14:31' },

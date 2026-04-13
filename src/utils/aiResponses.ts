@@ -58,19 +58,19 @@ export function getCategoryFromMessage(message: string): InquiryCategory {
   const lowerMessage = message.toLowerCase()
 
   if (['料金', '月額', 'いくら', '費用', '解約', '契約', '請求'].some(k => lowerMessage.includes(k))) {
-    return '料金・契約'
+    return 'Silica Pure'
   }
   if (['フィルター', '交換', 'パーツ', '部品', 'ボトル'].some(k => lowerMessage.includes(k))) {
-    return '部品請求'
+    return 'Water Pure'
   }
   if (['水漏れ', '故障', '壊れ', '修理', 'お湯', '動かない', '不具合'].some(k => lowerMessage.includes(k))) {
-    return '故障・修理'
+    return 'Pitcher Pure'
   }
   if (['申込', 'レンタル', '導入', '始め', '見積'].some(k => lowerMessage.includes(k))) {
-    return 'レンタル希望'
+    return 'Water Pure Pro'
   }
   if (['設置', '移動', '引越', '配送'].some(k => lowerMessage.includes(k))) {
-    return '設置・配送'
+    return '小型海水淡水化装置'
   }
 
   return 'その他'
@@ -78,11 +78,13 @@ export function getCategoryFromMessage(message: string): InquiryCategory {
 
 export function getConfidenceScore(category: InquiryCategory): number {
   const scores: Record<InquiryCategory, number> = {
-    'レンタル希望': Math.floor(Math.random() * 15) + 80,
-    '部品請求': Math.floor(Math.random() * 15) + 82,
-    '故障・修理': Math.floor(Math.random() * 20) + 40,
-    '料金・契約': Math.floor(Math.random() * 15) + 75,
-    '設置・配送': Math.floor(Math.random() * 15) + 78,
+    'Water Pure Pro': Math.floor(Math.random() * 15) + 80,
+    'Water Pure': Math.floor(Math.random() * 15) + 82,
+    'Pitcher Pure': Math.floor(Math.random() * 20) + 40,
+    'Silica Pure': Math.floor(Math.random() * 15) + 75,
+    '小型海水淡水化装置': Math.floor(Math.random() * 15) + 78,
+    '循環式手洗いユニット': Math.floor(Math.random() * 15) + 76,
+    '採用・エントリー': Math.floor(Math.random() * 10) + 85,
     'その他': Math.floor(Math.random() * 20) + 30,
   }
   return scores[category]
@@ -90,11 +92,13 @@ export function getConfidenceScore(category: InquiryCategory): number {
 
 export function getRecommendedAction(category: InquiryCategory): string {
   const actions: Record<InquiryCategory, string> = {
-    'レンタル希望': 'レンタルカタログ・料金表の送付を推奨。法人の場合は営業担当への引継ぎを推奨',
-    '部品請求': '部品型番の確認 → 在庫確認 → 注文フォーム案内',
-    '故障・修理': '症状ヒアリング → 簡易トラブルシュート案内。改善しない場合はサービス担当へエスカレーション',
-    '料金・契約': '料金プラン案内 / 請求明細の確認方法案内。解約は人間対応必須',
-    '設置・配送': '設置可能エリアの確認 → 設置日程の調整案内',
+    'Water Pure Pro': '製品カタログ・導入事例の送付を推奨。法人案件は営業担当への引継ぎを推奨',
+    'Water Pure': '製品スペック確認 → 設置環境ヒアリング → 見積作成案内',
+    'Pitcher Pure': '製品詳細・フィルター交換周期の案内。購入希望はECサイトへ誘導',
+    'Silica Pure': '健康効果資料の送付 → 法人一括導入の場合は専任担当アサイン',
+    '小型海水淡水化装置': '設置環境（電源・スペース・水源）のヒアリング → 技術担当へエスカレーション',
+    '循環式手洗いユニット': '設置場所・利用人数のヒアリング → 防水仕様確認 → 現地調査の手配',
+    '採用・エントリー': '人事担当への転送。希望職種・経歴の確認後、選考フロー案内',
     'その他': '内容をヒアリングし、適切な部署へ振り分け（エスカレーション推奨）',
   }
   return actions[category]

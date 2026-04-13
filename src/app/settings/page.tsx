@@ -16,7 +16,7 @@ import {
 import { Bot, Bell, Tag, Plus, Trash2 } from 'lucide-react'
 import { toast } from 'sonner'
 
-const defaultCategories = ['レンタル希望', '部品請求', '故障・修理', '料金・契約', '設置・配送', 'その他']
+const defaultCategories = ['Water Pure Pro', 'Water Pure', 'Pitcher Pure', 'Silica Pure', '小型海水淡水化装置', 'その他']
 
 export default function SettingsPage() {
   const [autoReplyEnabled, setAutoReplyEnabled] = useState(true)
