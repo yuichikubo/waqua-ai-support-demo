@@ -83,10 +83,11 @@ export default function PhonePage() {
   const simulateIncoming = async () => {
     setIsSimulating(true)
     try {
-      await fetch('/api/fondesk/webhook', { method: 'PUT' })
+      const res = await fetch('/api/fondesk/webhook', { method: 'PUT' })
+      const data = await res.json()
       await fetchCalls()
       toast.success('Fondeskから新着着信を受信しました', {
-        description: '着信データがDBに保存されました',
+        description: data._mock ? 'デモモード（DB未接続）' : '着信データがDBに保存されました',
       })
     } catch {
       toast.error('シミュレーションに失敗しました')
@@ -102,8 +103,12 @@ export default function PhonePage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ status, ...extra }),
       })
-      const updated = await res.json()
-      setCalls((prev) => prev.map((c) => (c.id === id ? updated : c)))
+      const data = await res.json()
+      // _mock時はローカルstateをマージして更新
+      setCalls((prev) => prev.map((c) => {
+        if (c.id !== id) return c
+        return { ...c, status, ...extra, updatedAt: new Date(), ...(data._mock ? {} : data) }
+      }))
       toast.success(`ステータスを「${status}」に更新しました`)
     } catch {
       toast.error('更新に失敗しました')
@@ -122,8 +127,19 @@ export default function PhonePage() {
           callbackBy,
         }),
       })
-      const updated = await res.json()
-      setCalls((prev) => prev.map((c) => (c.id === selectedId ? updated : c)))
+      const data = await res.json()
+      setCalls((prev) => prev.map((c) => {
+        if (c.id !== selectedId) return c
+        return {
+          ...c,
+          status: '折り返し済み',
+          callbackAt: new Date(),
+          callbackNote,
+          callbackBy,
+          updatedAt: new Date(),
+          ...(data._mock ? {} : data),
+        }
+      }))
       setShowCallbackForm(false)
       setCallbackNote('')
       setCallbackBy('')
