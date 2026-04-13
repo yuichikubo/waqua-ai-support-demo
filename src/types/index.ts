@@ -21,11 +21,18 @@ export interface Inquiry {
   messages: ChatMessage[]
 }
 
+export type MessageApprovalStatus = 'pending' | 'approved' | 'rejected' | 'edited'
+
 export interface ChatMessage {
   id: string
   sender: 'customer' | 'ai' | 'human'
   content: string
   timestamp: string
+  // AI応答承認フロー
+  approvalStatus?: MessageApprovalStatus  // undefined = 承認フロー対象外
+  draftContent?: string                   // 編集前の元AIドラフト
+  approvedBy?: string                     // 承認者名
+  approvedAt?: string                     // 承認日時
 }
 
 export interface LineUser {
